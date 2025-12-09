@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Analysis Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Log Analysis Dashboard</h1>
+            <p>Visualizing anomalies in 2D space</p>
+        </header>
+
+        <div class="controls">
+            <button id="loadDetailsBtn" onclick="loadData()">Load Data</button>
+            <div class="divider"></div>
+            <button class="action-btn" onclick="analyze('isolation_forest')">
+                <span class="icon">🔍</span> Isolation Forest
+            </button>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="logChart"></canvas>
+        </div>
+
+        <div id="statusMessage">Ready to load data...</div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
